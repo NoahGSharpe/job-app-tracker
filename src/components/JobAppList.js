@@ -1,12 +1,14 @@
 import React from "react";
-import JobAppItem from "./JobAppItem";
+import JobApp from "./JobApp";
 
-function JobAppList({ jobApps }) {
+function JobAppList({ jobApps, setJobApps }) {
 
 
     return (
-        <ul>
-            <JobAppItem />
+        <ul className="jobAppList">
+            {jobApps.map(jobApp => (
+                <JobApp key={jobApp.id} jobApp={jobApp} jobApps={jobApps} setJobApps={setJobApps} companyName={jobApp.companyName} />
+            ))}
         </ul>
     )
 }

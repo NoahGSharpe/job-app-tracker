@@ -12,7 +12,7 @@ function App() {
         <h1>Job Application Tracker</h1>
       </header>
       <Form inputText={inputText} setInputText={setInputText} jobApps={jobApps} setJobApps={setJobApps} />
-      <JobAppList jobApps={jobApps} />
+      <JobAppList jobApps={jobApps} setJobApps={setJobApps} />
     </div>
   );
 }
