@@ -3,7 +3,10 @@ import React from "react";
 
 function JobAppItem(){
     return(
-        <h3>This is a job app item</h3>
+        <div className="jobApp">
+            <li className="jobApp-item">Yooo</li>
+            <button>X</button>
+        </div>
     )
 }
 

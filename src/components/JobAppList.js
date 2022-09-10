@@ -1,12 +1,14 @@
 import React from "react";
+import JobAppItem from "./JobAppItem";
+
+function JobAppList({ jobApps }) {
 
 
-function JobAppList(){
-    return(
-        <h3>Put the list here</h3>
+    return (
+        <ul>
+            <JobAppItem />
+        </ul>
     )
 }
-
-
 
 export default JobAppList;
