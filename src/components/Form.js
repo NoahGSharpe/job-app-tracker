@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuid } from "uuid";
 
 function Form({ inputText, setInputText, jobApps, setJobApps }) {
   const inputTextHandler = (e) => {
@@ -6,10 +7,7 @@ function Form({ inputText, setInputText, jobApps, setJobApps }) {
   };
   const submitJobAppHandler = (e) => {
     e.preventDefault();
-    setJobApps([
-      ...jobApps,
-      { companyName: inputText, id: Math.random() * 1000 },
-    ]);
+    setJobApps([...jobApps, { companyName: inputText, id: uuid() }]);
     setInputText("");
   };
   return (

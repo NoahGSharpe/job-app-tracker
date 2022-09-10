@@ -1,12 +1,12 @@
 import React from "react";
 
-function JobApp({ companyName, jobID, jobApps, setJobApps }) {
+function JobApp({ jobApp, jobApps, setJobApps }) {
   const deleteHandler = () => {
-    setJobApps(jobApps.filter((x) => x.id !== jobID));
+    setJobApps(jobApps.filter((el) => el.id !== jobApp.id));
   };
   return (
     <div className="jobApp">
-      <li className="jobApp-item">{companyName}</li>
+      <li className="jobApp-item">{jobApp.companyName}</li>
       <button onClick={deleteHandler}>X</button>
     </div>
   );
