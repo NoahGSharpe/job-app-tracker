@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import Form from "./components/Form";
 import JobAppList from "./components/JobAppList";
+import Table from "./components/Table";
 
 const LOCAL_STORAGE_KEY = "JobAppsLocalStorage";
 
@@ -27,6 +28,8 @@ function App() {
         setJobApps={setJobApps}
       />
       <JobAppList jobApps={jobApps} setJobApps={setJobApps} />
+
+      <Table />
     </div>
   );
 }
