@@ -13,7 +13,11 @@ function Form({ inputText, setInputText, jobApps, setJobApps }) {
   return (
     <form>
       <input value={inputText} onChange={inputTextHandler} type="text" />
-      <button onClick={submitJobAppHandler} type="submit">
+      <button
+        className="btn btn-primary"
+        onClick={submitJobAppHandler}
+        type="submit"
+      >
         Submit
       </button>
     </form>

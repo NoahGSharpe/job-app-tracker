@@ -7,7 +7,9 @@ function JobApp({ jobApp, jobApps, setJobApps }) {
   return (
     <div className="jobApp">
       <li className="jobApp-item">{jobApp.companyName}</li>
-      <button onClick={deleteHandler}>X</button>
+      <button className="btn btn-sm btn-danger" onClick={deleteHandler}>
+        X
+      </button>
     </div>
   );
 }
