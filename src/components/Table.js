@@ -1,6 +1,7 @@
 import React from "react";
+import Row from "./Row";
 
-function Table({ jobApps }) {
+function Table({ jobApps, setJobApps }) {
   return (
     <div>
       <table className="table table-hover">
@@ -16,18 +17,12 @@ function Table({ jobApps }) {
         </thead>
         <tbody>
           {jobApps.map((jobApp) => (
-            <tr class="table-dark">
-              <td>{jobApp.companyName}</td>
-              <td>{jobApp.position}</td>
-              <td>{jobApp.date}</td>
-              <td>{jobApp.platform}</td>
-              <td>{jobApp.link}</td>
-              <td>
-                <button className="btn btn-info btn-sm">Edit</button>
-                <span> - </span>
-                <button className="btn btn-danger btn-sm">Delete</button>
-              </td>
-            </tr>
+            <Row
+              key={jobApp.id}
+              jobApp={jobApp}
+              jobApps={jobApps}
+              setJobApps={setJobApps}
+            />
           ))}
         </tbody>
       </table>
