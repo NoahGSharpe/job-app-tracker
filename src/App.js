@@ -29,7 +29,7 @@ function App() {
       />
       <JobAppList jobApps={jobApps} setJobApps={setJobApps} />
 
-      <Table />
+      <Table jobApps={jobApps} />
     </div>
   );
 }
