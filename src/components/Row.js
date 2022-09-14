@@ -12,6 +12,14 @@ function Row({ jobApp, jobApps, setJobApps }) {
       <td>{jobApp.platform}</td>
       <td>{jobApp.link}</td>
       <td>
+        <select className="form-select" id="statusSelect">
+          <option>Pending</option>
+          <option>Rejected</option>
+          <option>Interview</option>
+          <option>Offer</option>
+        </select>
+      </td>
+      <td>
         <button className="btn btn-info btn-sm">Edit</button>
         <span> - </span>
         <button className="btn btn-danger btn-sm" onClick={deleteHandler}>

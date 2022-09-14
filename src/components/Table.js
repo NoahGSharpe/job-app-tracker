@@ -12,6 +12,7 @@ function Table({ jobApps, setJobApps }) {
             <th scope="col">Date Applied</th>
             <th scope="col">Platform</th>
             <th scope="col">Link</th>
+            <th scope="col">Status</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
