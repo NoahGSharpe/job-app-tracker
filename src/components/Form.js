@@ -13,7 +13,6 @@ function Form({ jobApps, setJobApps }) {
 
   function changeHandler(e) {
     const value = e.target.value;
-    console.log(e.target.name);
     setFormState({
       ...formState,
       [e.target.name]: value,
