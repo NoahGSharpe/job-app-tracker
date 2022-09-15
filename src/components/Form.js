@@ -1,18 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
 
-function Form({ inputText, setInputText, jobApps, setJobApps }) {
+function Form({ jobApps, setJobApps }) {
+  const [inputCompany, setInputCompanyText] = useState("");
   const inputTextHandler = (e) => {
-    setInputText(e.target.value);
+    setInputCompanyText(e.target.value);
   };
   const submitJobAppHandler = (e) => {
     e.preventDefault();
-    setJobApps([...jobApps, { companyName: inputText, id: uuid() }]);
-    setInputText("");
+    setJobApps([...jobApps, { companyName: inputCompany, id: uuid() }]);
+    setInputCompanyText("");
   };
   return (
     <form>
-      <input value={inputText} onChange={inputTextHandler} type="text" />
+      <input value={inputCompany} onChange={inputTextHandler} type="text" />
       <button
         className="btn btn-primary"
         onClick={submitJobAppHandler}
