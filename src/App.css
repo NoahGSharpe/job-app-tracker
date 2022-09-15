@@ -1,3 +1,13 @@
 .App {
   text-align: center;
 }
+
+.Form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.status {
+  max-width: fit-content;
+}

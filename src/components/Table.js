@@ -3,10 +3,10 @@ import Row from "./Row";
 
 function Table({ jobApps, setJobApps }) {
   return (
-    <div>
-      <table className="table table-hover">
+    <div className="m-4">
+      <table className="table table-hover table-striped">
         <thead>
-          <tr>
+          <tr className="table-dark">
             <th scope="col">Company</th>
             <th scope="col">Position</th>
             <th scope="col">Date Applied</th>

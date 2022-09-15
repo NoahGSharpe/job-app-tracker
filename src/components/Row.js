@@ -1,11 +1,12 @@
 import React from "react";
+import "./Row.css";
 
 function Row({ jobApp, jobApps, setJobApps }) {
   const deleteHandler = () => {
     setJobApps(jobApps.filter((x) => x.id !== jobApp.id));
   };
   return (
-    <tr className="table-dark">
+    <tr className="table-secondary">
       <td>{jobApp.companyName}</td>
       <td>{jobApp.position}</td>
       <td>{jobApp.date}</td>

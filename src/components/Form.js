@@ -26,6 +26,10 @@ function Form({ jobApps, setJobApps }) {
       {
         companyName: formState.company,
         position: formState.position,
+        date: formState.date,
+        platform: formState.platform,
+        link: formState.link,
+        status: formState.status,
         id: uuid(),
       },
     ]);
@@ -40,54 +44,72 @@ function Form({ jobApps, setJobApps }) {
   };
 
   return (
-    <div>
+    <div className="Form m-4">
       <form>
-        <label htmlFor="inputCompany" className="form-label mt-4">
-          Company
-        </label>
-        <input
-          value={formState.company}
-          onChange={changeHandler}
-          name="company"
-          id="inputCompany"
-          className="form-control"
-          type="text"
-          placeholder="Enter Company Name"
-        />
+        <fieldset className="border p-3">
+          <legend>Create New Job Application</legend>
+          <div className="row">
+            <div className="form-floating col-auto">
+              <input
+                value={formState.company}
+                onChange={changeHandler}
+                name="company"
+                id="inputCompany"
+                className="form-control"
+                type="text"
+                placeholder="Enter Company Name"
+              />
+              <label htmlFor="inputCompany">Company</label>
+            </div>
 
-        <label htmlFor="inputPosition" className="form-label mt-4">
-          Position
-        </label>
-        <input
-          value={formState.position}
-          onChange={changeHandler}
-          name="position"
-          id="inputPosition"
-          className="form-control"
-          type="text"
-          placeholder="Enter Position"
-        />
+            <div className="form-floating col-auto">
+              <input
+                value={formState.position}
+                onChange={changeHandler}
+                name="position"
+                id="inputPosition"
+                className="form-control"
+                type="text"
+                placeholder="Enter Position"
+              />
+              <label htmlFor="inputPosition">Position</label>
+            </div>
 
-        <label htmlFor="inputPlatform" className="form-label mt-4">
-          Platform
-        </label>
-        <input
-          value={formState.platform}
-          onChange={changeHandler}
-          name="platform"
-          id="inputPlatform"
-          className="form-control"
-          type="text"
-          placeholder="Enter Platform"
-        />
+            <div className="form-floating col-auto">
+              <input
+                value={formState.platform}
+                onChange={changeHandler}
+                name="platform"
+                id="inputPlatform"
+                className="form-control"
+                type="text"
+                placeholder="Enter Platform"
+              />
+              <label htmlFor="inputPlatform">Platform</label>
+            </div>
 
-        <button
-          className="btn btn-primary"
-          onClick={submitJobAppHandler}
-          type="submit"
-        >
-          Submit
-        </button>
+            <div className="form-floating col-auto">
+              <input
+                value={formState.link}
+                onChange={changeHandler}
+                name="link"
+                id="inputLink"
+                className="form-control"
+                type="text"
+                placeholder="Enter Link"
+              />
+              <label htmlFor="inputLink">Link</label>
+            </div>
+
+            <button
+              className="btn btn-primary col"
+              onClick={submitJobAppHandler}
+              type="submit"
+            >
+              Submit
+            </button>
+          </div>
+        </fieldset>
       </form>
     </div>
   );
