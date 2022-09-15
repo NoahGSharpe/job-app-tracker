@@ -6,7 +6,6 @@ import Table from "./components/Table";
 const LOCAL_STORAGE_KEY = "JobAppsLocalStorage";
 
 function App() {
-  const [inputText, setInputText] = useState("");
   const [jobApps, setJobApps] = useState(
     JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)) || []
   );
@@ -20,12 +19,7 @@ function App() {
       <header>
         <h1>Job Application Tracker</h1>
       </header>
-      <Form
-        inputText={inputText}
-        setInputText={setInputText}
-        jobApps={jobApps}
-        setJobApps={setJobApps}
-      />
+      <Form jobApps={jobApps} setJobApps={setJobApps} />
 
       <Table jobApps={jobApps} setJobApps={setJobApps} />
     </div>
