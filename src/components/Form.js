@@ -118,7 +118,7 @@ function Form({ jobApps, setJobApps }) {
             </div>
 
             <button
-              className="btn btn-primary col"
+              className="btn btn-primary"
               onClick={submitJobAppHandler}
               type="submit"
             >
