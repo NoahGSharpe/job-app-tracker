@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Form as DateForm } from "react-bootstrap";
 import { v4 as uuid } from "uuid";
 
 function Form({ jobApps, setJobApps }) {
@@ -84,6 +85,23 @@ function Form({ jobApps, setJobApps }) {
                 placeholder="Enter Location"
               />
               <label htmlFor="inputLocation">Location</label>
+            </div>
+
+            <div>
+              <div className="row">
+                <div className="col-md-4">
+                  <DateForm.Group controlId="dob">
+                    <DateForm.Label>Select Date</DateForm.Label>
+                    <DateForm.Control
+                      value={formState.date}
+                      onChange={changeHandler}
+                      type="date"
+                      name="date"
+                      placeholder="Date Applied"
+                    />
+                  </DateForm.Group>
+                </div>
+              </div>
             </div>
 
             <div className="form-floating col-auto">
