@@ -20,7 +20,6 @@ function App() {
         <h1>Job Application Tracker</h1>
       </header>
       <Form jobApps={jobApps} setJobApps={setJobApps} />
-
       <Table jobApps={jobApps} setJobApps={setJobApps} />
     </div>
   );
