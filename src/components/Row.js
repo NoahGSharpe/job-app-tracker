@@ -7,11 +7,6 @@ function Row({ jobApp, jobApps, setJobApps }) {
   };
   return (
     <tr className="table-secondary">
-      <td>{jobApp.companyName}</td>
-      <td>{jobApp.position}</td>
-      <td>{jobApp.date}</td>
-      <td>{jobApp.platform}</td>
-      <td>{jobApp.link}</td>
       <td>
         <select className="form-select" id="statusSelect">
           <option>Pending</option>
@@ -20,6 +15,11 @@ function Row({ jobApp, jobApps, setJobApps }) {
           <option>Offer</option>
         </select>
       </td>
+      <td>{jobApp.companyName}</td>
+      <td>{jobApp.position}</td>
+      <td>{jobApp.location}</td>
+      <td>{jobApp.date}</td>
+      <td>{jobApp.notes}</td>
       <td>
         <button className="btn btn-info btn-sm">Edit</button>
         <span> - </span>

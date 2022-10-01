@@ -5,10 +5,9 @@ function Form({ jobApps, setJobApps }) {
   const [formState, setFormState] = useState({
     company: "",
     position: "",
+    location: "",
     date: "",
-    platform: "",
-    link: "",
-    status: "",
+    notes: "",
   });
 
   function changeHandler(e) {
@@ -26,20 +25,19 @@ function Form({ jobApps, setJobApps }) {
       {
         companyName: formState.company,
         position: formState.position,
+        location: formState.location,
         date: formState.date,
-        platform: formState.platform,
-        link: formState.link,
-        status: formState.status,
+        notes: formState.notes,
+        status: "Pending",
         id: uuid(),
       },
     ]);
     setFormState({
       company: "",
       position: "",
+      location: "",
       date: "",
-      platform: "",
-      link: "",
-      status: "",
+      notes: "",
     });
   };
 
@@ -77,28 +75,28 @@ function Form({ jobApps, setJobApps }) {
 
             <div className="form-floating col-auto">
               <input
-                value={formState.platform}
+                value={formState.location}
                 onChange={changeHandler}
-                name="platform"
-                id="inputPlatform"
+                name="location"
+                id="inputLocation"
                 className="form-control"
                 type="text"
-                placeholder="Enter Platform"
+                placeholder="Enter Location"
               />
-              <label htmlFor="inputPlatform">Platform</label>
+              <label htmlFor="inputLocation">Location</label>
             </div>
 
             <div className="form-floating col-auto">
               <input
-                value={formState.link}
+                value={formState.notes}
                 onChange={changeHandler}
-                name="link"
-                id="inputLink"
+                name="notes"
+                id="inputNotes"
                 className="form-control"
                 type="text"
-                placeholder="Enter Link"
+                placeholder="Enter Notes"
               />
-              <label htmlFor="inputLink">Link</label>
+              <label htmlFor="inputNotes">Notes</label>
             </div>
 
             <button

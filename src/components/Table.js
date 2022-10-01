@@ -7,12 +7,12 @@ function Table({ jobApps, setJobApps }) {
       <table className="table table-hover table-striped">
         <thead>
           <tr className="table-dark">
+            <th scope="col">Status</th>
             <th scope="col">Company</th>
             <th scope="col">Position</th>
+            <th scope="col">Location</th>
             <th scope="col">Date Applied</th>
-            <th scope="col">Platform</th>
-            <th scope="col">Link</th>
-            <th scope="col">Status</th>
+            <th scope="col">Notes</th>
             <th scope="col">Actions</th>
           </tr>
         </thead>
