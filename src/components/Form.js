@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import { Form as DateForm } from "react-bootstrap";
+import { Form as RForm } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import { v4 as uuid } from "uuid";
 
 function Form({ jobApps, setJobApps }) {
@@ -43,8 +45,71 @@ function Form({ jobApps, setJobApps }) {
   };
 
   return (
-    <div className="Form m-4">
-      <form>
+    <div>
+      <RForm>
+        <Row className="mt-3">
+          <RForm.Group as={Col} controlId="RFormCompany">
+            <RForm.Label>Company</RForm.Label>
+            <RForm.Control
+              value={formState.company}
+              onChange={changeHandler}
+              name="company"
+              placeholder="Enter Company Name"
+            />
+          </RForm.Group>
+          <RForm.Group as={Col} controlId="RFormPosition">
+            <RForm.Label>Position</RForm.Label>
+            <RForm.Control
+              value={formState.position}
+              onChange={changeHandler}
+              name="position"
+              placeholder="Enter Position"
+            />
+          </RForm.Group>
+        </Row>
+        <Row className="mt-3">
+          <Col>
+            <RForm.Group as={Row} controlId="RFormLocation">
+              <RForm.Label column sm={4}>
+                Location
+              </RForm.Label>
+              <Col sm={8}>
+                <RForm.Control
+                  value={formState.location}
+                  onChange={changeHandler}
+                  name="location"
+                  placeholder="Enter Location"
+                />
+              </Col>
+            </RForm.Group>
+          </Col>
+          <Col>
+            <RForm.Group as={Row} controlId="RFormDate">
+              <RForm.Label column sm={4}>
+                Date Applied
+              </RForm.Label>
+              <Col sm={8}>
+                <RForm.Control
+                  value={formState.date}
+                  onChange={changeHandler}
+                  type="date"
+                  name="date"
+                />
+              </Col>
+            </RForm.Group>
+          </Col>
+        </Row>
+
+        <button
+          className="btn btn-primary"
+          onClick={submitJobAppHandler}
+          type="submit"
+        >
+          Submit
+        </button>
+      </RForm>
+
+      {/* <form>
         <fieldset className="border p-3">
           <legend>Create New Job Application</legend>
           <div className="row">
@@ -126,7 +191,7 @@ function Form({ jobApps, setJobApps }) {
             </button>
           </div>
         </fieldset>
-      </form>
+      </form> */}
     </div>
   );
 }
