@@ -68,36 +68,24 @@ function Form({ jobApps, setJobApps }) {
           </RForm.Group>
         </Row>
         <Row className="mt-3">
-          <Col>
-            <RForm.Group as={Row} controlId="RFormLocation">
-              <RForm.Label column sm={4}>
-                Location
-              </RForm.Label>
-              <Col sm={8}>
-                <RForm.Control
-                  value={formState.location}
-                  onChange={changeHandler}
-                  name="location"
-                  placeholder="Enter Location"
-                />
-              </Col>
-            </RForm.Group>
-          </Col>
-          <Col>
-            <RForm.Group as={Row} controlId="RFormDate">
-              <RForm.Label column sm={4}>
-                Date Applied
-              </RForm.Label>
-              <Col sm={8}>
-                <RForm.Control
-                  value={formState.date}
-                  onChange={changeHandler}
-                  type="date"
-                  name="date"
-                />
-              </Col>
-            </RForm.Group>
-          </Col>
+          <RForm.Group as={Col} controlId="RFormLocation">
+            <RForm.Label>Location</RForm.Label>
+            <RForm.Control
+              value={formState.location}
+              onChange={changeHandler}
+              name="location"
+              placeholder="Enter Location"
+            />
+          </RForm.Group>
+          <RForm.Group as={Col} controlId="RFormDate">
+            <RForm.Label>Date Applied</RForm.Label>
+            <RForm.Control
+              value={formState.date}
+              onChange={changeHandler}
+              type="date"
+              name="date"
+            />
+          </RForm.Group>
         </Row>
 
         <button

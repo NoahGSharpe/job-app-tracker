@@ -15,7 +15,7 @@ function App() {
   }, [jobApps]);
 
   return (
-    <div className="App">
+    <div>
       <header id="title">
         <h1>Job Application Tracker</h1>
       </header>
