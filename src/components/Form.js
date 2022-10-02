@@ -45,7 +45,7 @@ function Form({ jobApps, setJobApps }) {
   };
 
   return (
-    <div>
+    <div className="container">
       <RForm>
         <Row className="mt-3">
           <RForm.Group as={Col} controlId="RFormCompany">
@@ -87,14 +87,27 @@ function Form({ jobApps, setJobApps }) {
             />
           </RForm.Group>
         </Row>
+        <Row className="mt-3">
+          <RForm.Group as={Col} controlId="RFormNotes">
+            <RForm.Label>Notes</RForm.Label>
+            <RForm.Control
+              value={formState.notes}
+              onChange={changeHandler}
+              name="notes"
+              placeholder="Notes (Optional)"
+            />
+          </RForm.Group>
+        </Row>
 
-        <button
-          className="btn btn-primary"
-          onClick={submitJobAppHandler}
-          type="submit"
-        >
-          Submit
-        </button>
+        <Row className="mt-3">
+          <button
+            className="btn btn-primary"
+            onClick={submitJobAppHandler}
+            type="submit"
+          >
+            Submit
+          </button>
+        </Row>
       </RForm>
 
       {/* <form>
