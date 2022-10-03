@@ -45,7 +45,7 @@ function Form({ jobApps, setJobApps }) {
   };
 
   return (
-    <div className="container">
+    <div className="w-50 mx-auto my-5">
       <RForm>
         <Row className="mt-3">
           <RForm.Group as={Col} controlId="RFormCompany">
@@ -91,6 +91,8 @@ function Form({ jobApps, setJobApps }) {
           <RForm.Group as={Col} controlId="RFormNotes">
             <RForm.Label>Notes</RForm.Label>
             <RForm.Control
+              as="textArea"
+              rows={3}
               value={formState.notes}
               onChange={changeHandler}
               name="notes"
