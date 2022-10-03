@@ -5,11 +5,13 @@ import Col from "react-bootstrap/Col";
 import { v4 as uuid } from "uuid";
 
 function Form({ jobApps, setJobApps }) {
+  var date = new Date();
+  var today = `${date.getMonth() + 1}/${date.getDate()}/${date.getFullYear()}`;
   const [formState, setFormState] = useState({
     company: "",
     position: "",
     location: "",
-    date: "",
+    date: today,
     notes: "",
   });
 
@@ -35,11 +37,15 @@ function Form({ jobApps, setJobApps }) {
         id: uuid(),
       },
     ]);
+    var date = new Date();
+    var today = `${
+      date.getMonth() + 1
+    }/${date.getDate()}/${date.getFullYear()}`;
     setFormState({
       company: "",
       position: "",
       location: "",
-      date: "",
+      date: today,
       notes: "",
     });
   };
@@ -82,7 +88,6 @@ function Form({ jobApps, setJobApps }) {
             <RForm.Control
               value={formState.date}
               onChange={changeHandler}
-              type="date"
               name="date"
             />
           </RForm.Group>
@@ -91,8 +96,6 @@ function Form({ jobApps, setJobApps }) {
           <RForm.Group as={Col} controlId="RFormNotes">
             <RForm.Label>Notes</RForm.Label>
             <RForm.Control
-              as="textArea"
-              rows={3}
               value={formState.notes}
               onChange={changeHandler}
               name="notes"
