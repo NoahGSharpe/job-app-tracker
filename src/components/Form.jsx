@@ -14,6 +14,7 @@ function Form({ jobApps, setJobApps }) {
     date: today,
     notes: "",
   });
+  const [validated, setValidated] = useState(false);
 
   function changeHandler(e) {
     const value = e.target.value;
@@ -25,6 +26,10 @@ function Form({ jobApps, setJobApps }) {
 
   const submitJobAppHandler = (e) => {
     e.preventDefault();
+    if (e.currentTarget.checkValidity() === false) {
+      e.stopPropagation();
+    }
+    setValidated(true);
     setJobApps([
       ...jobApps,
       {
@@ -52,20 +57,25 @@ function Form({ jobApps, setJobApps }) {
 
   return (
     <div className="w-50 mx-auto my-5">
-      <RForm>
+      <RForm noValidate validated={validated} onSubmit={submitJobAppHandler}>
         <Row className="mt-3">
           <RForm.Group as={Col} controlId="RFormCompany">
             <RForm.Label>Company</RForm.Label>
             <RForm.Control
+              required
               value={formState.company}
               onChange={changeHandler}
               name="company"
               placeholder="Enter Company Name"
             />
+            <RForm.Control.Feedback type="invalid">
+              Please Input a Company Name
+            </RForm.Control.Feedback>
           </RForm.Group>
           <RForm.Group as={Col} controlId="RFormPosition">
             <RForm.Label>Position</RForm.Label>
             <RForm.Control
+              required
               value={formState.position}
               onChange={changeHandler}
               name="position"
@@ -77,6 +87,7 @@ function Form({ jobApps, setJobApps }) {
           <RForm.Group as={Col} controlId="RFormLocation">
             <RForm.Label>Location</RForm.Label>
             <RForm.Control
+              required
               value={formState.location}
               onChange={changeHandler}
               name="location"
@@ -86,6 +97,7 @@ function Form({ jobApps, setJobApps }) {
           <RForm.Group as={Col} controlId="RFormDate">
             <RForm.Label>Date Applied</RForm.Label>
             <RForm.Control
+              required
               value={formState.date}
               onChange={changeHandler}
               name="date"
@@ -105,11 +117,7 @@ function Form({ jobApps, setJobApps }) {
         </Row>
 
         <Row className="mt-3">
-          <button
-            className="btn btn-primary"
-            onClick={submitJobAppHandler}
-            type="submit"
-          >
+          <button className="btn btn-primary" type="submit">
             Submit
           </button>
         </Row>
