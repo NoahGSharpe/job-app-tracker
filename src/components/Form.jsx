@@ -31,6 +31,7 @@ function Form({ jobApps, setJobApps }) {
       setValidated(true);
       return;
     }
+    setValidated(false);
     setJobApps([
       ...jobApps,
       {
