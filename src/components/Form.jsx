@@ -124,7 +124,7 @@ function Form({ jobApps, setJobApps }) {
           </RForm.Group>
         </Row>
 
-        <Row className="mt-3">
+        <Row className="mt-4">
           <button className="btn btn-primary" type="submit">
             Submit
           </button>
