@@ -16,7 +16,7 @@ function App() {
 
   return (
     <div>
-      <header id="title">
+      <header className="mt-4 text-center">
         <h1>Job Application Tracker</h1>
       </header>
       <Form jobApps={jobApps} setJobApps={setJobApps} />
