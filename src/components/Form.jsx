@@ -28,8 +28,9 @@ function Form({ jobApps, setJobApps }) {
     e.preventDefault();
     if (e.currentTarget.checkValidity() === false) {
       e.stopPropagation();
+      setValidated(true);
+      return;
     }
-    setValidated(true);
     setJobApps([
       ...jobApps,
       {
@@ -69,7 +70,7 @@ function Form({ jobApps, setJobApps }) {
               placeholder="Enter Company Name"
             />
             <RForm.Control.Feedback type="invalid">
-              Please Input a Company Name
+              Please enter a company name
             </RForm.Control.Feedback>
           </RForm.Group>
           <RForm.Group as={Col} controlId="RFormPosition">
@@ -81,6 +82,9 @@ function Form({ jobApps, setJobApps }) {
               name="position"
               placeholder="Enter Position"
             />
+            <RForm.Control.Feedback type="invalid">
+              Please enter a postion
+            </RForm.Control.Feedback>
           </RForm.Group>
         </Row>
         <Row className="mt-3">
@@ -93,6 +97,9 @@ function Form({ jobApps, setJobApps }) {
               name="location"
               placeholder="Enter Location"
             />
+            <RForm.Control.Feedback type="invalid">
+              Please enter a location
+            </RForm.Control.Feedback>
           </RForm.Group>
           <RForm.Group as={Col} controlId="RFormDate">
             <RForm.Label>Date Applied</RForm.Label>
